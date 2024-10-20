@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        class Triangle 
+    {
+
+        constructor(a, b, c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+
+        Input() 
+        {
+            this.a = parseFloat(prompt("Input first side of triangle: "));
+            this.b = parseFloat(prompt("Input second side of triangle: "));
+            this.c = parseFloat(prompt("Input third side of triangle: "));
+        }
+
+        Print()
+        {
+            console.log("a = " + this.a + ", b = " + this.b + ", c = " + this.c);
+        }
+
+        getArea()
+        {
+            let q = this.getPerimeter() / 2;
+            return Math.sqrt(q * (q - this.a) * (q - this.b) * (q - this.c));
+        }
+
+        getPerimeter()
+        {
+            return this.a + this.b + this.c;
+        }
+
+        results()
+        {
+            let perimeter = this.getPerimeter();
+            let area = this.getArea();
+
+            if (area !== null) 
+            {
+                console.log("Perimeter = " + perimeter);
+                console.log("Area = " + area);
+            }
+        }
+
+    }
+    let z = new Triangle(2, 4, 6);
+    z.Print();
+    z.Input();
+    z.Print();
+    z.results();
+    </script>
+</body>
+</html>

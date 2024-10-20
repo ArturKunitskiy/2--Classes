@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setter</title>
+</head>
+<body>
+    <script>
+        
+        class Car
+        {
+            constructor(model, color, year, price) 
+            {
+                this._model = model;
+                this._color = color;
+                this._year = year;
+                this._price = price;
+            }
+
+            get model()
+            {
+                if (this._model === undefined)
+                {
+                    this._model = "Unknown";
+                }
+                return this._model;
+            }
+
+            set model(value)
+            {
+                this._model = value;
+            }
+
+            get color()
+            {
+                if (this._color === undefined)
+                {
+                    this._color = "Unknown";
+                }
+                return this._color;
+            }
+
+            set color(value)
+            {
+                this._color = value;
+            }
+
+            get year()
+            {
+                if (this._year === undefined)
+                {
+                    this._year = 0;
+                }
+                return this._year;
+            }
+
+            set year(value)
+            {
+                if (value < 666)
+                {
+                    alert("ERROR!!! Year can't be less than 666!");
+                } else
+                {
+                    this._year = value;
+                }
+            }
+
+            get price()
+            {
+                if (this._price === undefined)
+                {
+                    this._price = 0;
+                }
+                return this._price;
+            }
+
+            set price(value)
+            {
+                if (value < 0)
+                {
+                    alert("ERROR!!! Price can't be less than 0!");
+                } else
+                {
+                    this._price = value;
+                }
+            }
+        }
+
+        let car1 = new Car("Lexus GX 460", "Black", 2012, 30000);
+
+        car1.year = 2224;
+        car1.price = -5000;
+        car1.color = "Red";
+
+        console.log("Model: " + car1.model);
+        console.log("Color: " + car1.color);
+        console.log("Year: " + car1.year);
+        console.log("Price: " + car1.price);
+
+    </script>
+
+</body>
+</html>
